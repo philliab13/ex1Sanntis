@@ -4,7 +4,7 @@
 #include <pthread.h>
 #include <stdio.h>
 
-int j=0;
+
 int i = 0;
 
 // Note the return type: void*
