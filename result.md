@@ -5,3 +5,7 @@ What does GOMAXPROCS do? What happens if you set it to 1? It chooses how many OS
 4.  In c, as far as I understand, Mutex are used when you have concrete variables or such that more than one thread need to read and write to. While Semaphores are used when you need more flexibility and some threads are working on another thread and you cant simply allow one thread at a time. Therefore I use mutex since we have a single variable, i, which one thread should modify at a time.
 
 Made interleaving possible by locking and unlocking every time they run the for-loop.
+
+5. Had to unlock and lock the changing, forgot to say that the capacity changed in the popping, used a lot of time fifuring that out.
+
+In go it tries to read from an empty channel, but there are no more info, need to close the channels to avoid deadlock.
