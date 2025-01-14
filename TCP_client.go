@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"time"
 )
 
 func main() {
@@ -30,6 +31,8 @@ func main() {
 		os.Exit(1)
 	}
 
+	for {
+
 	// Send a message to the server
 	_, err = conn.Write([]byte("Hello TCP Server\n"))
 	fmt.Println("send...")
@@ -47,4 +50,7 @@ func main() {
 
 	// Print the data read from the connection to the terminal
 	fmt.Print("> ", string(data))
+
+	time.Sleep(1 * time.Second)
+}
 }
